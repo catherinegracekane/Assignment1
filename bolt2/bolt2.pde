@@ -7,17 +7,20 @@ int gameState = 0;
 void setup()
 {
   size(800, 500, P2D);
-  background(0);  
+  
 
-  if (gameState == 0)
+  /*if (gameState == 0)
   {
     bolts();  
     gameState++;
-  }
+  }*/
 }
 
 void draw()
 {
+  
+  bolts();
+
   if (mousePressed)
   {
     background(0, 255, 0);
@@ -31,6 +34,15 @@ void draw()
 
 void bolts ()
 {
+  if(mouseX >= 0 && mouseX <= width/2)
+  {
+    background(35, 189, 229);  
+  }
+  else
+  {
+    background(23, 143, 175);
+  }
+  
   //first bolt - baby blue
   bolt = createShape();
   bolt.beginShape();
