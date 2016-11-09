@@ -7,42 +7,57 @@ int gameState = 0;
 void setup()
 {
   size(800, 500, P2D);
-  
-
-  /*if (gameState == 0)
-  {
-    bolts();  
-    gameState++;
-  }*/
 }
+//frameSpeed is used to change the speed in the screen timeDelta
+float frameSpeed = 0;
+//frameChange will determine when the screen needs to change timeAccumulator
+float frameChange = 0;
+
+int end = 0;
 
 void draw()
 {
+ 
+  int timeValue = millis();
+  //need to calculate frameSpeed here
+  frameSpeed = (timeValue - end) / 500.0f; 
+  end = timeValue;
   
-  bolts();
-
-  if (mousePressed)
+  //now the frameSpeed is calculated, change is used to determine what's on screen
+  //according to these values
+  frameChange += frameSpeed;
+  
+  //this is simply a checking mechanism **can remove**
+  println("This is frameSpeed " + frameSpeed);
+  println("This is frameChange" + frameChange);
+  
+  if (frameChange >= 1 && frameChange < 7)
   {
-    background(0, 255, 0);
-    fill(255);
-    ellipse(width/2, height/2, width-200, width/4);
-    fill(83,102,157);
-    ellipse(width/2, height/2, 200, width/4-30);
-    //text("TEST", 450, 250);
+    fill(0);
+    bolts();
   }
+  if (frameChange >= 7 && frameChange < 8)
+  {
+    electricEye();
+  }
+  if (frameChange >= 10)
+  {
+    frameChange = 0;
+  } 
+  
+
 }
 
 void bolts ()
 {
-  if(mouseX >= 0 && mouseX <= width/2)
+  if (mouseX >= 0 && mouseX <= width/2)
   {
-    background(35, 189, 229);  
-  }
-  else
+    background(35, 189, 229);
+  } else
   {
     background(23, 143, 175);
   }
-  
+
   //first bolt - baby blue
   bolt = createShape();
   bolt.beginShape();
@@ -97,4 +112,13 @@ void bolts ()
   textSize(50);
   text("MOONAGE", 450, 250);
   text("ENTERPRISES", 450, 300);
+}
+
+void electricEye() {
+
+  background(51, 31, 237);
+  fill(255);
+  ellipse(width/2, height/2, width-200, width/4);
+  fill(83, 102, 157);
+  ellipse(width/2, height/2, 200, width/4-30);
 }
