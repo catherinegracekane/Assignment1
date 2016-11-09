@@ -1,62 +1,22 @@
+//used to create lightning bolt
 PShape bolt;
 PShape bolt1;
 PShape bolt2;
 PShape bolt3;
-int gameState = 0;
 
-void setup()
+void mainScreen ()
 {
-  size(800, 500, P2D);
-}
-//frameSpeed is used to change the speed in the screen timeDelta
-float frameSpeed = 0;
-//frameChange will determine when the screen needs to change timeAccumulator
-float frameChange = 0;
-
-int end = 0;
-
-void draw()
-{
- 
-  int timeValue = millis();
-  //need to calculate frameSpeed here
-  frameSpeed = (timeValue - end) / 500.0f; 
-  end = timeValue;
+  //This is my main screen to show only when program begins
   
-  //now the frameSpeed is calculated, change is used to determine what's on screen
-  //according to these values
-  frameChange += frameSpeed;
-  
-  //this is simply a checking mechanism **can remove**
-  println("This is frameSpeed " + frameSpeed);
-  println("This is frameChange" + frameChange);
-  
-  if (frameChange >= 1 && frameChange < 7)
-  {
-    fill(0);
-    bolts();
-  }
-  if (frameChange >= 7 && frameChange < 8)
-  {
-    electricEye();
-  }
-  if (frameChange >= 10)
-  {
-    frameChange = 0;
-  } 
-  
-
-}
-
-void bolts ()
-{
-  if (mouseX >= 0 && mouseX <= width/2)
+  /*if (mouseX >= 0 && mouseX <= width/2)
   {
     background(35, 189, 229);
   } else
   {
     background(23, 143, 175);
-  }
+  }*/
+  
+  background(0);
 
   //first bolt - baby blue
   bolt = createShape();
@@ -110,15 +70,13 @@ void bolts ()
   shape(bolt);
   //i want to make this change in size 
   textSize(50);
+  fill(255);
   text("MOONAGE", 450, 250);
   text("ENTERPRISES", 450, 300);
-}
-
-void electricEye() {
-
-  background(51, 31, 237);
-  fill(255);
-  ellipse(width/2, height/2, width-200, width/4);
-  fill(83, 102, 157);
-  ellipse(width/2, height/2, 200, width/4-30);
+  
+  textSize(75);
+  text("CLICK HERE", width/2-100, height*0.85);
+  
+  
+  gameState++;
 }
