@@ -6,6 +6,7 @@ void setup() {
 void draw() {
   
   cpLogo();
+  crewData();
   grid();
   centreEye(); //in draw for radar method
 
@@ -47,14 +48,15 @@ void grid() {
 
   
   stroke(31, 85, 23);
+  strokeWeight(1);
   fill(0);
   rectMode(CENTER);
   rect(x, y, eyeW, height/2, 7);
   
-  for( int i = xPos1; i<xPos2; i+=20)
+  for( int i = xPos1; i<xPos2+1; i+=20)
   {
     line(i, yPos1, i, yPos2); //vertical
-    line(i, yPos2, xPos3+40, height);
+    line(i, yPos2, xPos3+35, height);
     xPos3 += 40;
   }
   for(int j = yPos1; j < yPos2 ; j+=20)
@@ -63,10 +65,30 @@ void grid() {
   }
 }
 
+void crewData(){
+
+  stroke(31, 85, 23);
+  fill(0);
+  rectMode(CENTER);
+  rect(width/5, height/2+65, width/3, height-175, 7); //outer rect
+  line((width/5)-(width/6), height/2-97, (width/5)+(width/6), height/2-97);
+  int a;
+  a=77;
+  strokeWeight(3);
+  stroke(193,190,189);
+  fill(39,247,25);
+  ellipse(a, 95, 30, 30);  //3 alarm buttons
+  fill(183,129,42);
+  ellipse(a+80, 95, 30, 30);  //3 alarm buttons
+  fill(170,50,39);
+  ellipse(a+160, 95, 30, 30);  //3 alarm buttons
+}
+
 PShape logo;
 //Control panel logo
 void cpLogo(){
   
+  strokeWeight(3);
   logo = createShape();
   logo.beginShape();
   stroke(31, 85, 23);
@@ -81,5 +103,7 @@ void cpLogo(){
   logo.vertex(width/2-80, 100);  
   logo.endShape(CLOSE);
   shape(logo);
+  
+  
   
 }
