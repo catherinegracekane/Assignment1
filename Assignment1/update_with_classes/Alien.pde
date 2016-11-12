@@ -14,7 +14,7 @@ class Alien {
 
   void display() {
 
-    stroke(31, 85, 23);
+    stroke(55, 105, 188);
     fill(0);
     rectMode(CENTER);
     rect(b, c+65, d, (c*2)-175, 7); //outer rect
@@ -25,11 +25,21 @@ class Alien {
   }
 
   void alarms() {
-    fill(39, 247, 25);
-    ellipse(a, 95, 30, 30);  //3 alarm buttons
-    fill(183, 129, 42);
-    ellipse(a+80, 95, 30, 30);  //3 alarm buttons
-    fill(170, 50, 39);
-    ellipse(a+160, 95, 30, 30);  //3 alarm buttons
+    
+    if(frameCount % 25 ==0){
+    fill(0, frameCount * 80 % 255, 0); //flashing green alarm
+    ellipse(a, 95, 30, 30); 
+    }
+
+    if(frameCount % 40 ==0){
+    fill(255, frameCount * 80 % 255, 0); //flashing red-orange alarm
+    ellipse(a+80, 95, 30, 30);  
+    }
+    
+    if(frameCount % 30 == 0){
+    fill(frameCount * 80 % 255, 0, 0); //flashing red alarm
+    ellipse(a+160, 95, 30, 30);  
+    }
+ 
   }
 }

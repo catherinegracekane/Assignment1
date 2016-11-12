@@ -19,12 +19,14 @@ class Grid {
   //display grid
   void display()
   {
-    stroke(31, 85, 23);
+    stroke(55, 105, 188);
     strokeWeight(1);
+    //fill(random(-255, 255)); //add in functionality that this flashes if there's an alert
     fill(0);
     rectMode(CENTER);
     rect(x, y, gridW, height/2, 7);
 
+    
     for ( int i = xPos1; i<xPos2+1; i+=20)
     {
       line(i, yPos1, i, yPos2); //vertical

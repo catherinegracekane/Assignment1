@@ -9,7 +9,7 @@ void setup() {
   size(800, 600);
   background(0);
   
-  //Class calls
+//class calls
   eye = new Eye(); //this is a new instance of eye
   grid = new Grid(); //this is a new instance of grid
   data = new Alien(); //this is a new instance of alien

@@ -19,7 +19,7 @@ class Eye {
   //display function
   void display()
   {
-    stroke(47, 113, 38);
+    stroke(154,179,222);
     fill(0);
     arc(x, y, eyeW, eyeH, -PI, 0); //top eye arc
     arc(x, y, eyeW, eyeH, 0, PI);  //bottom eye arc
