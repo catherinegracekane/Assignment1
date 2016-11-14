@@ -15,6 +15,8 @@ void setup() {
   data = new Alien(); //this is a new instance of alien
   cp = new Logo(); //this is a new instance of logo
   
+  data.alienData(); //Alien : information
+  
 }
 
 void draw() {
