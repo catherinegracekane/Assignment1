@@ -25,4 +25,5 @@ void draw() {
   data.alarms(); //Alien : adding more functionality at later date
   grid.display(); //Grid
   eye.display(); //Eye  
+  data.button();
 }

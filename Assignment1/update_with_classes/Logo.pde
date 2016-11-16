@@ -8,6 +8,7 @@ class Logo {
   }
   
   void display() {
+    
     strokeWeight(3);
     stroke(55, 105, 188);
     logo = createShape();
@@ -23,5 +24,9 @@ class Logo {
     logo.vertex(x-80, 100);  
     logo.endShape(CLOSE);
     shape(logo);
+    
+    //stroke(0, 0, random(0,255));
+    ellipse(x, 50, 60, 40);
+    
   }
 }

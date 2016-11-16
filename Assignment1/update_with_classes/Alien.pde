@@ -3,13 +3,10 @@ Table table;
 
 class Alien {
 
-  int a, b, c, d;
-
+  int a, b, c, d, e;
   //Table values
   String name, origin; 
   int age, threat;
-
-
   //constructor
   Alien() {
 
@@ -70,5 +67,20 @@ class Alien {
       + "," + origin
       + "," + threat
       ;
+  }
+
+  void button() {
+
+    //fill(0,0,255);
+    //Make 5 buttons
+    rectMode(CENTER);
+    for ( int i = 0; i<5; i++)
+    {
+      for (e=width/2-120; e<height-50; e+=60)
+      {
+        rect(b, e, b, b/3, 7);
+        text(name, b, e);
+      }
+    }
   }
 }
