@@ -11,7 +11,7 @@ class Grid {
     gridW = width*0.4; //used for rect width
     xPos1 = 400;
     xPos2 = 720;
-    xPos3 = 400;
+    xPos3 = 435;
     yPos1 = 150;
     yPos2 = 450;
   }
@@ -30,8 +30,7 @@ class Grid {
     for ( int i = xPos1; i<xPos2+1; i+=20)
     {
       line(i, yPos1, i, yPos2); //vertical
-      line(i, yPos2, xPos3+35, height);
-      xPos3 += 40;
+      line(i, yPos2, xPos3+(i), height);
     }
     for (int j = yPos1; j < yPos2; j+=20)
     {

@@ -3,6 +3,7 @@ Eye eye;
 Grid grid; 
 Alien data;
 Logo cp; //cp = control panel
+PFont font; //use this to import font types
 
 void setup() {
   
