@@ -31,9 +31,11 @@ class Dial{
       a -= 5;
       rect(position.x+b, position.y-3, 3, 7);
       b += 5;    
-    }//end of for
-    
-    //smaller circle
+    }//end of for    
+  }
+  
+  void smallDial(){
+        //smaller circle
     pushMatrix();
     translate(250,-100);
     fill(119, 204, 211);
@@ -55,9 +57,6 @@ class Dial{
     rotate((TWO_PI)/4);
     arc(position.x-30, position.y, 50, 10, (1.5*PI)/4, (3.2*PI)/4); //tear drop right   
     popMatrix();
- 
-   
-    
   }
   
 }//end of dial class
