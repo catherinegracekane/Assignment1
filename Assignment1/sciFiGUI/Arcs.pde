@@ -11,9 +11,10 @@ class Arcs {
   float a6; //135 degrees
   float a7; // quarter circle - 90 degrees
   float a8; // eighth of circle - 45 degrees
-  
+ 
   float arcSize; 
 
+  
   Arcs() {
 
     position = new PVector(width/2, (height/2)-50); //start in centre
@@ -25,9 +26,9 @@ class Arcs {
     a5 = PI; //180
     a6 = (3*PI)/4; //135
     a7 = PI/2; //90
-    a8 = PI/4; //45
-    
+    a8 = PI/4; //45   
     arcSize = 150;
+
   }
 
   void display() {
@@ -40,20 +41,25 @@ class Arcs {
     stroke(102, 199, 224);
     arc(position.x, position.y, arcSize, arcSize, 0, a4); 
 
-    int y = 180;
-    int z = 160;
-    strokeWeight(0.5);
+    int y = 140;
+    int z = 120;
+    int sec = second();
+    strokeWeight(3);
     stroke(131, 175, 154);
 
+    //need to move this to the small dial
+    pushMatrix();
+    translate(250,-100);
     for (float i=0; i<5; i++)
     {
-
-      arc(position.x, position.y, y, y, random(0,PI), random(0,a4)); 
-      arc(position.x, position.y, z, z, random(a5,a4), random(0,a1));
-      y+=random(4,10);
-      z+=random(4,8);
-
+      arc(position.x, position.y, y, y, PI, a4); 
+      arc(position.x, position.y, z, z, a4, a1);
+      //arc(position.x, position.y, y, y, random(0,PI), random(0,a4)); 
+      //arc(position.x, position.y, z, z, random(a5,a4), random(0,a1));
+      y+=random(4,10)/600*sec;
+      z+=random(4,8)/600*sec;
     }
+    popMatrix();
 
     //outer arcs from dial
    // pushMatrix();
@@ -67,7 +73,8 @@ class Arcs {
     arc(position.x, position.y, arcSize*2.07, arcSize*2.07, (5.1*PI)/4, (5.5*PI)/4);
     //popMatrix();
     
-    //line for the numeric dial
+
+    //separate numeric dial
     strokeWeight(3);
     arc(position.x, position.y, arcSize*2.5, arcSize*2.67, (3.4*PI)/4, (5.2*PI)/4);
 

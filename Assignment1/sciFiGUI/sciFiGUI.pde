@@ -3,7 +3,7 @@ Arcs arcs;
 Fuel fuel;
 void setup(){
   
-  size(800, 500);
+  size(800, 500, P3D);
   background(0);
   
   dial = new Dial();
@@ -14,10 +14,11 @@ void setup(){
 
 void draw(){
   
-    //background(0);
-    arcs.display();
+  
+    background(0);
     dial.middleC();
     dial.smallDial();
     fuel.display();
+    arcs.display();
 
 }

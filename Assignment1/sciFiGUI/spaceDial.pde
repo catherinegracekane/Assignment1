@@ -17,10 +17,19 @@ class Dial{
     //main middle circle
     fill(119, 204, 211);
     ellipse(position.x, position.y, 110, 100);
-    //small blue centre
+    //small centre
     stroke(100);
-    fill(115, 185, 203);
+    //fill(115, 185, 203);
+    fill(255, 0, 0);
     ellipse(position.x, position.y, 25, 20);
+    if(mousePressed)
+    {
+      if(mouseX > position.x-25 && mouseX < position.x + 20 && mouseY > position.y -25 && mouseY < position.y+20)
+      {
+        fill(0, 255, 0);
+        ellipse(position.x, position.y, 25, 20);
+      }
+    } 
     
     //details in the centre
     noStroke();
@@ -35,7 +44,8 @@ class Dial{
   }
   
   void smallDial(){
-        //smaller circle
+    
+    //smaller circle
     pushMatrix();
     translate(250,-100);
     fill(119, 204, 211);
