@@ -11,6 +11,8 @@ class Arcs {
   float a6; //135 degrees
   float a7; // quarter circle - 90 degrees
   float a8; // eighth of circle - 45 degrees
+  
+  float arcSize; 
 
   Arcs() {
 
@@ -24,6 +26,8 @@ class Arcs {
     a6 = (3*PI)/4; //135
     a7 = PI/2; //90
     a8 = PI/4; //45
+    
+    arcSize = 150;
   }
 
   void display() {
@@ -31,10 +35,10 @@ class Arcs {
     noFill();
     strokeWeight(2);
     stroke(255);
-    arc(position.x, position.y, 150, 150, a4, a1);
+    arc(position.x, position.y, arcSize, arcSize, a4, a1);
 
     stroke(102, 199, 224);
-    arc(position.x, position.y, 150, 150, 0, a4); 
+    arc(position.x, position.y, arcSize, arcSize, 0, a4); 
 
     int y = 180;
     int z = 160;
@@ -57,15 +61,15 @@ class Arcs {
     //rotate(a3);
     strokeWeight(8);
     stroke(148,216,219);
-    arc(position.x, position.y, 300, 300, a7, a2);     
-    arc(position.x, position.y, 285, 285, a6, a3);   
-    arc(position.x, position.y, 270, 270, a5, a3); 
-    arc(position.x, position.y, 310, 310, (5.1*PI)/4, (5.5*PI)/4);
+    arc(position.x, position.y, arcSize*2, arcSize*2, a7, a2);     
+    arc(position.x, position.y, arcSize*1.9, arcSize*1.9, a6, a3);   
+    arc(position.x, position.y, arcSize*1.8, arcSize*1.8, a5, a3); 
+    arc(position.x, position.y, arcSize*2.07, arcSize*2.07, (5.1*PI)/4, (5.5*PI)/4);
     //popMatrix();
     
     //line for the numeric dial
     strokeWeight(3);
-    arc(position.x, position.y, 420, 400, (3.4*PI)/4, (5.2*PI)/4);
+    arc(position.x, position.y, arcSize*2.5, arcSize*2.67, (3.4*PI)/4, (5.2*PI)/4);
 
 
     /*int a =276, b = 230;
