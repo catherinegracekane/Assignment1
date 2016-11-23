@@ -21,7 +21,6 @@ class Dial{
     ellipse(position.x, position.y, 110, 100);
     //small centre
     stroke(100);
-    //fill(115, 185, 203);
     fill(255, 0, 0);
     ellipse(position.x, position.y, 25, 20);
     if(mousePressed)

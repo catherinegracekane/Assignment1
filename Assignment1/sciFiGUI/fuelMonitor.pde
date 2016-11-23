@@ -43,11 +43,18 @@ class Fuel {
       }
     } 
     
-    //width 800, height 500
-    fill(0);
-    strokeWeight(2);
+
+    noFill();
+    strokeWeight(3);
     stroke(4, 116, 175);
-    rect((width*0.079), ((height/3)*1.98), 160, (height/3), 6); //left rectangle
+    rect(25, 50, 185, (height/1.2)+20, 6); //left rectangle
+    line(25, 90, 210, 90);
+    textSize(15);
+    fill(255);
+    text(" ZONE LOCATION POINTS ", 25, 75);
+    
+    noFill();
+    stroke(4, 116, 175);
     rect((width/3+20), (height*0.77), 160, 100, 6); //middle rectange
 
     noFill();
