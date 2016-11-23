@@ -33,6 +33,7 @@ class Arcs {
 
   void display() {
     //x, y, width, height, angle to start arc, angle to stop in radians
+
     noFill();
     strokeWeight(2);
     stroke(255);
@@ -62,22 +63,25 @@ class Arcs {
     popMatrix();
 
     //outer arcs from dial
-   // pushMatrix();
-    //translate(0, 0);
-    //rotate(a3);
     strokeWeight(8);
     stroke(148,216,219);
-    arc(position.x, position.y, arcSize*2, arcSize*2, a7, a2);     
+    arc(position.x, position.y, arcSize*2, arcSize*2, 0, a1);     
     arc(position.x, position.y, arcSize*1.9, arcSize*1.9, a6, a3);   
     arc(position.x, position.y, arcSize*1.8, arcSize*1.8, a5, a3); 
     arc(position.x, position.y, arcSize*2.07, arcSize*2.07, (5.1*PI)/4, (5.5*PI)/4);
-    //popMatrix();
+    arc(position.x, position.y, (arcSize*2)-30, (arcSize*2)-30, radians(270), radians(360));
+    arc(position.x, position.y, (arcSize*2)-30, (arcSize*2)-30, radians(0), radians(180));
+    arc(position.x, position.y, (arcSize*2)+10, (arcSize*2)+10, radians(50), radians(67.5));  
+    arc(position.x, position.y, (arcSize*2)-15, (arcSize*2)-15, radians(0), radians(90));
     
-
+    stroke(87,133,142);
+    arc(position.x, position.y, arcSize*1.8, arcSize*1.8, a5, a3); 
+    arc(position.x, position.y, (arcSize*2)-15, (arcSize*2)-15, radians(270), radians(360));
+    arc(position.x, position.y, (arcSize*2)-15, (arcSize*2)-15, radians(90), radians(180));
+    arc(position.x, position.y, (arcSize*2)-30, (arcSize*2)-30, radians(0), radians(90));
     //separate numeric dial
-    strokeWeight(3);
-    arc(position.x, position.y, arcSize*2.5, arcSize*2.67, (3.4*PI)/4, (5.2*PI)/4);
-
+    //strokeWeight(3);
+    //arc(position.x, position.y, arcSize*2.5, arcSize*2.67, (3.4*PI)/4, (5.2*PI)/4);
 
     /*int a =276, b = 230;
     float j = radians(2);
@@ -103,10 +107,6 @@ class Arcs {
     rotate(radians(180));
     rect(0, 0, 15, 25);
     popMatrix();
-    }*/
-    
-    
-    
-    
+    }*/ 
   }
 }//end of class

@@ -2,11 +2,13 @@ class Dial{
   
   PVector position; //x and y co-ordinates
   PVector rect; //position of rectangles
+  float dial;
+  int sec;
   //constructor
   Dial(){
     
   position = new PVector(width/2, (height/2)-50); //start in centre
-    
+  
   }//end of Dial
   
   //This is my middle circle for the dial
@@ -45,6 +47,9 @@ class Dial{
   
   void smallDial(){
     
+    fill(255);
+    textSize(15);
+    text("Pressure Gauge", 600,25);
     //smaller circle
     pushMatrix();
     translate(250,-100);
@@ -65,8 +70,9 @@ class Dial{
     arc(position.x-30, position.y, 50, 10, (7*PI)/4, (9*PI)/4); //tear drop right
     translate(545, -128);
     rotate((TWO_PI)/4);
-    arc(position.x-30, position.y, 50, 10, (1.5*PI)/4, (3.2*PI)/4); //tear drop right   
+    arc(position.x-30, position.y, 50, 10, (1.5*PI)/4, (3.2*PI)/4); //tear drop right 
     popMatrix();
+   
   }
   
 }//end of dial class
