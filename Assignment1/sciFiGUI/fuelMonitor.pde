@@ -2,7 +2,6 @@ static final int TRIANGLE = 5;
 class Fuel {
 
   PVector position;
-  //PFont zone;
   int a, b, c, d;
   int spacing;
   float dial;
@@ -37,10 +36,28 @@ class Fuel {
         line(0, 0, 0, -120);
         popMatrix();
         
-        textSize(15);
         fill(255);
         text("LOCATION " + dial+ " " + " AREA CLEAR", (width*0.625)+25, (height*0.69)+80);
       }
+      
+      if(dial > 0 && dial < 151)
+      {
+        textSize(9);
+        text( "Zone location " + dial, (width*0.625)-185, (height*0.69)+95);
+        text( " is equal to Jupiter ", (width*0.625)-185, (height*0.69)+110);     
+   }
+      if(dial > 150 && dial < 251)
+      {
+        textSize(9);
+        text( "Zone location : " + dial, (width*0.625)-185, (height*0.69)+95);
+        text( " is equal to Mars ", (width*0.625)-185, (height*0.69)+110);
+      }
+      if(dial > 250 && dial < 361)
+      {
+        textSize(9);
+        text( "Zone location " + dial, (width*0.625)-185, (height*0.69)+95);
+        text( " is equal to Saturn ", (width*0.625)-185, (height*0.69)+110);      
+    }
     } 
     
 
@@ -49,9 +66,9 @@ class Fuel {
     stroke(4, 116, 175);
     rect(25, 50, 185, (height/1.2)+20, 6); //left rectangle
     line(25, 90, 210, 90);
-    textSize(15);
     fill(255);
-    text(" ZONE LOCATION POINTS ", 25, 75);
+    textSize(14);
+    text(" ZONE LOCATION POINTS", 25, 75);
     
     noFill();
     stroke(4, 116, 175);
@@ -62,8 +79,6 @@ class Fuel {
     line((width*0.625), (height*0.69)+30, (width*0.625)+270, (height*0.69)+30);
     textSize(15);
     fill(255);
-   // zone = loadFont("Menlo-Regular-48.vlw");
-    //textFont(zone, 15);
     text(" ZONE CLEARANCE MONITOR ", (width*0.625)+20, (height*0.69)+25);
     
     for (int i = 0; i< (spacing*TRIANGLE); i+=spacing)
