@@ -1,4 +1,5 @@
 static final int TRIANGLE = 5;
+static final int LINES = 4;
 class Fuel {
 
   PVector position;
@@ -9,19 +10,20 @@ class Fuel {
   int i = 0;
   int j;
   String[] mars;
-  String[] split;
+  String[] jupiter;
   //constructor
   Fuel() {
 
     position = new PVector(width/2, (height/2)-50); //start in centre
     mars = loadStrings("mars.txt");
-    split = split(mars[i], " ");
+    jupiter = loadStrings("jupiter.txt");
 
     a = 405;
     b = 393;
     c = 401;
     d = 296; //triangle x 
     spacing = 18;
+    //splitz = split(mars[i], " ");
   }
 
   void display() {
@@ -50,14 +52,33 @@ class Fuel {
         textSize(9);
         text( "Zone location " + dial, (width*0.625)-tw, (height*0.69)+95);
         text( " is equal to Jupiter ", (width*0.625)-tw, (height*0.69)+110);
-        marsData();
+        for (i = 0; i < LINES; i++)
+        {
+          for (j = 0; j < (LINES*spacing); j+=spacing)
+          {
+
+            text(jupiter[i] + "\t", 115, 195+j); 
+            println(jupiter[i]);
+            i = i+1;
+          }
+        }
       }
       if (dial > 150 && dial < 251)
       {
         textSize(9);
         text( "Zone location : " + dial, (width*0.625)-tw, (height*0.69)+95);
         text( " is equal to Mars ", (width*0.625)-tw, (height*0.69)+110);
-        marsData();
+
+        for (i = 0; i < LINES; i++)
+        {
+          for (j = 0; j < (LINES*spacing); j+=spacing)
+          {
+
+            text(mars[i] + "\t", 115, 195+j); 
+            println(mars[i]);
+            i = i+1;
+          }
+        }
       }
       if (dial > 250 && dial < 361)
       {
@@ -98,9 +119,15 @@ class Fuel {
   }
 
   void marsData() {
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < LINES; i++)
     {
-      text(mars[i] + "\t", 115, 75+i);
+      for (j = 0; j < (LINES*spacing); j+=spacing)
+      {
+
+        text(mars[i] + "\t", 115, 195+j); 
+        println(mars[i]);
+        i = i+1;
+      }
     }
   }
 }

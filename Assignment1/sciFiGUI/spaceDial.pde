@@ -9,7 +9,7 @@ class Dial{
     
   position = new PVector(width/2, (height/2)-50); //start in centre
   
-  }//end of Dial
+  }//end of constructor
   
   //This is my middle circle for the dial
   void middleC(){
@@ -29,8 +29,8 @@ class Dial{
       {
         fill(0, 255, 0);
         ellipse(position.x, position.y, 25, 20);
-      }
-    } 
+      }//end inner if
+    } //end outer if
     
     //details in the centre
     noStroke();
@@ -42,7 +42,7 @@ class Dial{
       rect(position.x+b, position.y-3, 3, 7);
       b += 5;    
     }//end of for    
-  }
+  }//end middleC()
   
   void smallDial(){
     
@@ -72,7 +72,6 @@ class Dial{
     arc(position.x-30, position.y, 50, 10, (1.5*PI)/4, (3.2*PI)/4); //tear drop right 
     popMatrix();
    
-  }
+  }//end small dial
   
 }//end of dial class
-  
