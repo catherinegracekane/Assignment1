@@ -48,7 +48,7 @@ class Dial{
     
     fill(255);
     textSize(15);
-    text("Pressure Gauge", 600,25);
+    text("Pressure Gauge", 650,25);
     //smaller circle
     pushMatrix();
     translate(250,-100);
