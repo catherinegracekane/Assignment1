@@ -26,8 +26,8 @@ class Space {
   }
 
   float y(float b) {
-    //return cos(-t/10)*100 + sin(t/5) *50; 
-    return b;
+    return cos(-b/10)*100 + sin(b/5) *50; 
+    //return b;
   }
 
   float ys (float c) {

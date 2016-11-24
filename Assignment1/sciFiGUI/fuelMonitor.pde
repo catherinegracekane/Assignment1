@@ -8,7 +8,7 @@ class Fuel {
   float dial;
   int sec;
   int i = 0;
-  int j;
+  int j,tw;
   String[] mars;
   String[] jupiter;
   //constructor
@@ -23,6 +23,7 @@ class Fuel {
     c = 401;
     d = 296; //triangle x 
     spacing = 18;
+    tw = 125; //text width spacing
     //splitz = split(mars[i], " ");
   }
 
@@ -46,7 +47,7 @@ class Fuel {
         fill(255);
         text("LOCATION " + dial+ " " + " AREA CLEAR", (width*0.625)+135, (height*0.69)+80);
       }
-      int tw = 125;
+
       if (dial > 0 && dial < 151)
       {
         textSize(9);
