@@ -4,6 +4,7 @@ Fuel fuel;
 Space space;
 Screen main; //front screen
 PFont font, front;
+PImage img;
 int gameState = 0; //used to control what's on screen
 
 void setup() {
@@ -35,7 +36,8 @@ void draw() {
     break;
     
   case 1:
-    background(0);
+    img = loadImage("spacebackground.jpg");
+    background (img);
     space.display();
     dial.middleC();
     dial.smallDial();
