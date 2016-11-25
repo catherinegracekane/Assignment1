@@ -5,7 +5,7 @@ class Fuel {
 
   PVector position;
   int a, b, c, d, i, j, tw, sec;
-  int spacing;
+  int spacing, triSpace;
   float dial, z;
   String[] mars, jupiter, saturn;
 
@@ -23,7 +23,8 @@ class Fuel {
     c = 401;
     d = 296; //triangle x 
     i = 0;
-    spacing = 18;
+    spacing = 49;
+    triSpace = 18;
     tw = 125; //text width spacing
     //splitz = split(mars[i], " ");
   }
@@ -52,7 +53,7 @@ class Fuel {
       if (dial > 0 && dial < 151)
       {
         textSize(10);
-        text( "Current speed " + dial, (width*0.625)-tw, (height*0.69)+95);
+        text( "Current speed " + ( dial*340) + " MPS:", (width*0.625)-tw, (height*0.69)+95);
         text( " we have entered Jupiter ", (width*0.625)-tw, (height*0.69)+110);
         
         for (i = 0; i < LINES; i++)
@@ -60,7 +61,7 @@ class Fuel {
           for (j = 0; j < (LINES*spacing); j+=spacing)
           {
             textSize(12);
-            text(jupiter[i] + "\t", 215, 270+j); 
+            text(jupiter[i] + "\t", 145, 320+j); 
             //println(jupiter[i]);
             i = i+1;
           }
@@ -69,15 +70,15 @@ class Fuel {
       if (dial > 150 && dial < 251)
       {
         textSize(10);
-        text( "Zone location : " + dial, (width*0.625)-tw, (height*0.69)+95);
-        text( " is equal to Mars ", (width*0.625)-tw, (height*0.69)+110);
+        text( "Current speed " + ( dial*340) + " MPS:", (width*0.625)-tw, (height*0.69)+95);
+        text( " we have entered Mars ", (width*0.625)-tw, (height*0.69)+110);
 
         for (i = 0; i < LINES; i++)
         {
           for (j = 0; j < (LINES*spacing); j+=spacing)
           {
             textSize(12);
-            text(mars[i] + "\t", 215, 270+j); 
+            text(mars[i] + "\t", 145, 320+j); 
             //println(mars[i]);
             i = i+1;
           }
@@ -86,14 +87,14 @@ class Fuel {
       if (dial > 250 && dial < 361)
       {
         textSize(10);
-        text( "Zone location " + dial, (width*0.625)-tw, (height*0.69)+95);
-        text( " is equal to Saturn ", (width*0.625)-tw, (height*0.69)+110);
+        text( "Current speed " + ( dial*340) + " MPS:", (width*0.625)-tw, (height*0.69)+95);
+        text( " we have entered Saturn ", (width*0.625)-tw, (height*0.69)+110);
         for (i = 0; i < LINES; i++)
         {
           for (j = 0; j < (LINES*spacing); j+=spacing)
           {
             textSize(12);
-            text(saturn[i] + "\t", 215, 270+j); 
+            text(saturn[i] + "\t", 145, 320+j); 
             //println(saturn[i]);
             i = i+1;
           }
@@ -139,7 +140,7 @@ class Fuel {
     fill(255);
     text(" ZONE CLEARANCE MONITOR ", (width*0.625)+130, (height*0.69)+25);
 
-    for (int i = 0; i< (spacing*TRIANGLE); i+=spacing)
+    for (int i = 0; i< (triSpace*TRIANGLE); i+=triSpace)
     {    
       fill(255);
       stroke(255);
