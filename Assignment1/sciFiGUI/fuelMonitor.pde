@@ -52,8 +52,8 @@ class Fuel {
       if (dial > 0 && dial < 151)
       {
         textSize(10);
-        text( "Zone location " + dial, (width*0.625)-tw, (height*0.69)+95);
-        text( " is equal to Jupiter ", (width*0.625)-tw, (height*0.69)+110);
+        text( "Current speed " + dial, (width*0.625)-tw, (height*0.69)+95);
+        text( " we have entered Jupiter ", (width*0.625)-tw, (height*0.69)+110);
         
         for (i = 0; i < LINES; i++)
         {

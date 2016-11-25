@@ -1,7 +1,4 @@
 //I want to use this to create a background that resembles outer space
-//image link: https://i.ytimg.com/vi/Kg4CRIDXkGg/maxresdefault.jpg
-
-
 static final int STARS = 12;
 
 class Space {

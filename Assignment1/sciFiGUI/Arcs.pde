@@ -79,34 +79,5 @@ class Arcs {
     arc(position.x, position.y, (arcSize*2)-15, (arcSize*2)-15, radians(270), radians(360));
     arc(position.x, position.y, (arcSize*2)-15, (arcSize*2)-15, radians(90), radians(180));
     arc(position.x, position.y, (arcSize*2)-30, (arcSize*2)-30, radians(0), radians(90));
-    //separate numeric dial
-    //strokeWeight(3);
-    //arc(position.x, position.y, arcSize*2.5, arcSize*2.67, (3.4*PI)/4, (5.2*PI)/4);
-
-    /*int a =276, b = 230;
-    float j = radians(2);
-    
-    arc(position.x, position.y, 250, 250, a5, a1); 
-    smooth();
-    pushMatrix();
-    translate(275, height/2);
-    rotate(a7);
-    rect(0, 0, 15, 25);
-    popMatrix();
-    
-    pushMatrix();
-    translate(276, (height/2)-20);
-    rotate(a7-radians(2));
-    rect(0, 0, 15, 25);
-    popMatrix();
-    
-    for(int i = 0; i<3; i++)
-    {
-    pushMatrix();
-    translate(275, height/2);
-    rotate(radians(180));
-    rect(0, 0, 15, 25);
-    popMatrix();
-    }*/ 
   }
 }//end of class

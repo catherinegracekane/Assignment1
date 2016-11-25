@@ -11,18 +11,16 @@ void setup() {
 
   size(800, 500, P3D);
   background(0);
-  
+
   front = loadFont("PTMono-Regular-48.vlw");
-  
   font = loadFont("Menlo-Regular-48.vlw");
   textFont(font, 10);
-  
+
   dial = new Dial();
   arcs = new Arcs();
   fuel = new Fuel();
   space = new Space();
   main = new Screen();
- 
 }
 
 void draw() {
@@ -34,19 +32,24 @@ void draw() {
     //front screen
     main.display();
     break;
-    
+
   case 1:
-    img = loadImage("spacebackground.jpg");
-    background (img);
+    backGround();
     space.display();
     dial.middleC();
     dial.smallDial();
     fuel.display();
     arcs.display();
     break;
-    
-   default:
-     println("Incorrect choice");
-     break;
+
+  default:
+    println("Incorrect choice");
+    break;
   }
-  }
+}
+
+void backGround() {
+  //image link: https://i.ytimg.com/vi/Kg4CRIDXkGg/maxresdefault.jpg
+  img = loadImage("spacebackground.jpg");
+  background (img);
+}
