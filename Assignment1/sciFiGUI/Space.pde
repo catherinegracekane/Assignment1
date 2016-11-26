@@ -12,26 +12,20 @@ class Space {
   void display()
   {
     for (int i = 0; i < STARS; i++) {
+      //stroke(200, 203, 156);
       point(x(b), y(b));
-      point(xs(c), ys(c));
+      point(x(-b), y(-b));
     }
-    b-=0.2;
+    b-=random(0.2, 0.5);
   }
 
   float x(float b) {
-    return sin(-b)*1000;
-  }
-
-  float xs (float c) {
-    return sin(-b)*1000;
+    return sin(-b)*1000 + cos(-b)*200;
   }
 
   float y(float b) {
-    return cos(-b/10)*100 + sin(b/5) *50; 
+    return cos(-b/10)*100 + sin(b/5) *50 + cos(b)*100; 
     //return b;
   }
 
-  float ys (float c) {
-    return -b;
-  }
 }
