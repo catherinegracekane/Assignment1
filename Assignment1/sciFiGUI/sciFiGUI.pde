@@ -16,7 +16,7 @@ void setup() {
   font = loadFont("Menlo-Regular-48.vlw");
   textFont(font, 10);
 
-  dial = new Dial();
+  dial = new Dial(); 
   arcs = new Arcs();
   fuel = new Fuel();
   space = new Space();

@@ -11,9 +11,9 @@ class Arcs {
   float a6; //135 degrees
   float a7; // quarter circle - 90 degrees
   float a8; // eighth of circle - 45 degrees
- 
   float arcSize; 
 
+  int y, z;
   
   Arcs() {
 
@@ -28,12 +28,12 @@ class Arcs {
     a7 = PI/2; //90
     a8 = PI/4; //45   
     arcSize = 150;
-
+    y = 140;
+    z = 120;
   }
 
   void display() {
     //x, y, width, height, angle to start arc, angle to stop in radians
-
     noFill();
     strokeWeight(2);
     stroke(255);
@@ -42,8 +42,7 @@ class Arcs {
     stroke(102, 199, 224);
     arc(position.x, position.y, arcSize, arcSize, 0, a4); 
 
-    int y = 140;
-    int z = 120;
+
     int sec = second();
     strokeWeight(3);
     stroke(131, 175, 154);
@@ -53,12 +52,14 @@ class Arcs {
     translate(250,-100);
     for (float i=0; i<5; i++)
     {
-      arc(position.x, position.y, y, y, PI, a4); 
-      arc(position.x, position.y, z, z, a4, a1);
-      //arc(position.x, position.y, y, y, random(0,PI), random(0,a4)); 
+      //arc(position.x, position.y, y, y, PI, a4); 
+      //arc(position.x, position.y, z, z, a4, a1);
+      arc(position.x, position.y, y, z, 0, TWO_PI); 
       //arc(position.x, position.y, z, z, random(a5,a4), random(0,a1));
-      y+=random(4,10)/600*sec;
-      z+=random(4,8)/600*sec;
+      //y+=random(4,10)/6000*sec;
+      //z+=random(4,8)/60*sec;
+      //y+=0.02*sec;
+      //z+=0.02*sec;
     }
     popMatrix();
 

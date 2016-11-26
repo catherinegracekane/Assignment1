@@ -6,7 +6,7 @@ class Dial{
   int sec;
   //constructor
   Dial(){
-    
+   
   position = new PVector(width/2, (height/2)-50); //start in centre
   
   }//end of constructor
