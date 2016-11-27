@@ -4,6 +4,7 @@ static final int LINES = 4;
 class Fuel {
 
   PVector position;
+  PShape upArrow, downArrow;
   int a, b, c, d, i, j, tw, sec;
   int spacing, triSpace; //spacing for the text, spacing for the triangles
   float dial, z;
@@ -148,6 +149,29 @@ class Fuel {
       stroke(255);
       triangle( d, a+i, d, b+i, (d*1.034), c+i); //triangles in middle box
     }
+
+    speed();
+  }
+
+  void speed() {
+
+    pushMatrix();
+    translate((position.x/3)*2, 0);
+    upArrow = createShape();
+    upArrow.beginShape();
+    upArrow.fill(0);
+    upArrow.vertex(position.x, position.y);
+    upArrow.vertex(position.x+20, position.y+20);
+    upArrow.vertex(position.x+10, position.y+20);
+    upArrow.vertex(position.x+10, position.y+40);
+    upArrow.vertex(position.x-10, position.y+40);
+    upArrow.vertex(position.x-10, position.y+20);
+    upArrow.vertex(position.x-20, position.y+20);
+    upArrow.endShape(CLOSE);
+    shape(upArrow);
+    popMatrix();
+    
+    
   }
 }
 /*void marsData() {
