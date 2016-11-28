@@ -5,10 +5,12 @@ Arcs arcs;
 Fuel fuel;
 Space space;
 Screen main; //front screen
-
+Planet mars, jupiter, saturn;
+//ArrayList <Planet> planets;
 PFont font, front;
 PImage img;
 int gameState = 0; //used to control what's on screen
+
 
 //used sound: http://www.audiomicro.com/free-sound-effects/mother-ship
 AudioPlayer shipSound;
@@ -28,12 +30,14 @@ void setup() {
   minim = new Minim(this);
   shipSound = minim.loadFile("Mother ship 1.wav");
 
-
   dial = new Dial(); 
   arcs = new Arcs();
   fuel = new Fuel();
   space = new Space();
   main = new Screen();
+  mars = new Planet(255,0,0);
+  jupiter = new Planet(50,255,0);
+  saturn = new Planet(0,0,255);
 }
 
 void draw() {
@@ -53,6 +57,10 @@ void draw() {
     dial.smallDial();
     fuel.display();
     arcs.display();
+    mars.render();
+    jupiter.render();
+    saturn.render();
+
     break;
 
   default:

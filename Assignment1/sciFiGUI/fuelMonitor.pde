@@ -1,11 +1,12 @@
 static final int TRIANGLE = 5;
 static final int LINES = 4;
 
-class Fuel {
+class Fuel 
+{
 
   PVector position;
   PShape upArrow, downArrow;
-  int a, b, c, d, i, j, tw, sec;
+  int a, b, c, d, i, j, tw, sec, fillColour;
   int spacing, triSpace; //spacing for the text, spacing for the triangles
   float dial, z;
   String[] mars, jupiter, saturn;
@@ -27,6 +28,7 @@ class Fuel {
     spacing = 49;
     triSpace = 18;
     tw = 125; //text width spacing
+    fillColour = 0;
     //splitz = split(mars[i], " ");
   }
 
@@ -54,15 +56,16 @@ class Fuel {
         if (dial > 0 && dial < 151)
         {
           textSize(10);
+          text( ( dial*340) + " MPS:", (width*0.625)-(tw*0.4), (height*0.69)+95);          
           text( "Current speed " + ( dial*340) + " MPS:", (width*0.625)-tw, (height*0.69)+95);
-          text( " we have entered Jupiter ", (width*0.625)-tw, (height*0.69)+110);
+          //text( " we have entered Jupiter ", (width*0.625)-tw, (height*0.69)+110);
 
           for (i = 0; i < LINES; i++)
           {
             for (j = 0; j < (LINES*spacing); j+=spacing)
             {
               textSize(12);
-              text(jupiter[i] + "\t", 145, 320+j); 
+              text(jupiter[i] + "\t", 165, 320+j); 
               //println(jupiter[i]);
               i = i+1;
             }
@@ -71,15 +74,23 @@ class Fuel {
         if (dial > 150 && dial < 251)
         {
           textSize(10);
-          text( "Current speed " + ( dial*340) + " MPS:", (width*0.625)-tw, (height*0.69)+95);
-          text( " we have entered Mars ", (width*0.625)-tw, (height*0.69)+110);
+          text( ( dial*340) + " MPS:", (width*0.625)-(tw*0.4), (height*0.69)+95);
+          //text( " we have entered Mars ", (width*0.625)-tw, (height*0.69)+110);
+
+          //red planet
+          /* pushMatrix();
+           translate((width*0.2), (height*0.25));
+           fill(255,0,0);
+           sphere(25);
+           popMatrix();*/
 
           for (i = 0; i < LINES; i++)
           {
             for (j = 0; j < (LINES*spacing); j+=spacing)
             {
               textSize(12);
-              text(mars[i] + "\t", 145, 320+j); 
+              text(mars[i] + "\t", 165, 320+j);
+
               //println(mars[i]);
               i = i+1;
             }
@@ -88,14 +99,21 @@ class Fuel {
         if (dial > 250 && dial < 361)
         {
           textSize(10);
+          text( ( dial*340) + " MPS:", (width*0.625)-(tw*0.4), (height*0.69)+95);          
           text( "Current speed " + ( dial*340) + " MPS:", (width*0.625)-tw, (height*0.69)+95);
-          text( " we have entered Saturn ", (width*0.625)-tw, (height*0.69)+110);
+          //text( " we have entered Saturn ", (width*0.625)-tw, (height*0.69)+110);
+
+          /* pushMatrix();
+           translate((width*0.2), (height*0.25));
+           fill(188,191,58);
+           sphere(35);
+           popMatrix();*/
           for (i = 0; i < LINES; i++)
           {
             for (j = 0; j < (LINES*spacing); j+=spacing)
             {
               textSize(12);
-              text(saturn[i] + "\t", 145, 320+j); 
+              text(saturn[i] + "\t", 165, 320+j); 
               //println(saturn[i]);
               i = i+1;
             }
@@ -170,25 +188,64 @@ class Fuel {
     upArrow.endShape(CLOSE);
     shape(upArrow);
     popMatrix();
-    
+
     pushMatrix();
-    rotate(TWO_PI);
-    translate(0, 0);
+    translate((position.x/3)*2, position.y/3);
     downArrow = createShape();
     downArrow.beginShape();
     downArrow.fill(0);
-    downArrow.vertex(position.x, position.y);
-    downArrow.vertex(position.x+20, position.y+20);
+    downArrow.vertex(position.x-10, position.y);
+    downArrow.vertex(position.x+10, position.y);
     downArrow.vertex(position.x+10, position.y+20);
-    downArrow.vertex(position.x+10, position.y+40);
-    downArrow.vertex(position.x-10, position.y+40);
-    downArrow.vertex(position.x-10, position.y+20);
+    downArrow.vertex(position.x+20, position.y+20);
+    downArrow.vertex(position.x, position.y+40);
     downArrow.vertex(position.x-20, position.y+20);
+    downArrow.vertex(position.x-10, position.y+20);
     downArrow.endShape(CLOSE);
     shape(downArrow);
     popMatrix();
-    
-    
+
+if(key == CODED)
+{
+    if ( keyCode == UP)
+    {
+      pushMatrix();
+      translate((position.x/3)*2, 0);
+      upArrow = createShape();
+      upArrow.beginShape();
+      upArrow.fill(0);
+      upArrow.vertex(position.x, position.y);
+      upArrow.vertex(position.x+20, position.y+20);
+      upArrow.vertex(position.x+10, position.y+20);
+      upArrow.vertex(position.x+10, position.y+40);
+      upArrow.vertex(position.x-10, position.y+40);
+      upArrow.vertex(position.x-10, position.y+20);
+      upArrow.vertex(position.x-20, position.y+20);
+      upArrow.endShape(CLOSE);
+      shape(upArrow);
+      popMatrix();
+    }
+}
+if(key == CODED){
+    if (keyCode == DOWN)
+    {
+      pushMatrix();
+      translate((position.x/3)*2, position.y/3);
+      downArrow = createShape();
+      downArrow.beginShape();
+      downArrow.fill(255);
+      downArrow.vertex(position.x-10, position.y);
+      downArrow.vertex(position.x+10, position.y);
+      downArrow.vertex(position.x+10, position.y+20);
+      downArrow.vertex(position.x+20, position.y+20);
+      downArrow.vertex(position.x, position.y+40);
+      downArrow.vertex(position.x-20, position.y+20);
+      downArrow.vertex(position.x-10, position.y+20);
+      downArrow.endShape(CLOSE);
+      shape(downArrow);
+      popMatrix();
+    }
+}
   }
 }
 /*void marsData() {

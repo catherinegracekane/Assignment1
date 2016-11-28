@@ -7,7 +7,7 @@ class Screen {
   Screen() {   
     position = new PVector(width/2, height/2);
     a = "MOONAGE ENTERPRISES";
-    b = "PRESS ANY KEY TO ENTER";
+    b = "PRESS ENTER TO ACCESS";
   }
 
   void display() {
@@ -25,7 +25,7 @@ class Screen {
     textSize(25);
     text(b, position.x, position.y+75);
 
-    if (keyPressed)
+    if ( key == RETURN || key == ENTER)
     {
       gameState = gameState + 1;
     }

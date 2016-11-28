@@ -1,7 +1,8 @@
 //I want to use this to create a background that resembles outer space
 static final int STARS = 12;
 
-class Space {
+class Space 
+{
     float a, b, c;
 
   Space() {

@@ -12,6 +12,7 @@ class Arcs {
   float a7; // quarter circle - 90 degrees
   float a8; // eighth of circle - 45 degrees
   float arcSize; 
+  float angle, angle1;
 
   Arcs() {
 
@@ -30,24 +31,26 @@ class Arcs {
 
   void display() {
     //x, y, width, height, angle to start arc, angle to stop in radians
+    angle -=0.02; //used to rotate the dial
     noFill();
     strokeWeight(2);
     stroke(255);
-    arc(position.x, position.y, arcSize, arcSize, a4, a1);
+    arc(position.x, position.y, arcSize, arcSize, a4+angle, a1+angle);
 
     stroke(102, 199, 224);
-    arc(position.x, position.y, arcSize, arcSize, 0, a4); 
-    
+    arc(position.x, position.y, arcSize, arcSize, 0+angle, a4+angle); 
+
     //outer arcs from dial
+    angle1 +=0.02;
     strokeWeight(8);
     stroke(148, 216, 219);
     arc(position.x, position.y, arcSize*2, arcSize*2, 0, a1);     
-    arc(position.x, position.y, arcSize*1.9, arcSize*1.9, a6, a3);   
+    arc(position.x, position.y, arcSize*1.9, arcSize*1.9, a6, a3);  
     arc(position.x, position.y, arcSize*1.8, arcSize*1.8, a5, a3); 
-    arc(position.x, position.y, arcSize*2.07, arcSize*2.07, (5.1*PI)/4, (5.5*PI)/4);
+    arc(position.x, position.y, arcSize*2.07, arcSize*2.07, ((5.1*PI)/4)+angle1, ((5.5*PI)/4)+angle1);
     arc(position.x, position.y, (arcSize*2)-30, (arcSize*2)-30, radians(270), radians(360));
     arc(position.x, position.y, (arcSize*2)-30, (arcSize*2)-30, radians(0), radians(180));
-    arc(position.x, position.y, (arcSize*2)+10, (arcSize*2)+10, radians(50), radians(67.5));  
+    arc(position.x, position.y, (arcSize*2)+10, (arcSize*2)+10, radians(50)+angle1, radians(67.5)+angle1);  
     arc(position.x, position.y, (arcSize*2)-15, (arcSize*2)-15, radians(0), radians(90));
 
     stroke(87, 133, 142);

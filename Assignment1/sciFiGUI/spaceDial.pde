@@ -84,9 +84,8 @@ class Dial {
     noFill();
     pushMatrix();
     translate(250, -100);
-      arc(position.x, position.y, arcWidth, arcHeight, 0, TWO_PI); 
-      //arcWidth+=0.02*sec;
-      //arcHeight+=0.02*sec;
+    arc(position.x, position.y, arcWidth, arcHeight, 0, TWO_PI); 
+    line(position.x, position.y, position.x, position.y+50);
     popMatrix();
   }//end small dial
 }//end of dial class
