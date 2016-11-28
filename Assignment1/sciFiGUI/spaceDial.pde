@@ -26,6 +26,7 @@ class Dial {
     stroke(100);
     fill(255, 0, 0);
     ellipse(position.x, position.y, 25, 20);
+    
     if (mousePressed)
     {
       if (mouseX > position.x-25 && mouseX < position.x + 20 && mouseY > position.y -25 && mouseY < position.y+20)

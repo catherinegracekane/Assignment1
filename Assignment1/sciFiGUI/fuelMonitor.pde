@@ -171,6 +171,23 @@ class Fuel {
     shape(upArrow);
     popMatrix();
     
+    pushMatrix();
+    rotate(TWO_PI);
+    translate(0, 0);
+    downArrow = createShape();
+    downArrow.beginShape();
+    downArrow.fill(0);
+    downArrow.vertex(position.x, position.y);
+    downArrow.vertex(position.x+20, position.y+20);
+    downArrow.vertex(position.x+10, position.y+20);
+    downArrow.vertex(position.x+10, position.y+40);
+    downArrow.vertex(position.x-10, position.y+40);
+    downArrow.vertex(position.x-10, position.y+20);
+    downArrow.vertex(position.x-20, position.y+20);
+    downArrow.endShape(CLOSE);
+    shape(downArrow);
+    popMatrix();
+    
     
   }
 }
