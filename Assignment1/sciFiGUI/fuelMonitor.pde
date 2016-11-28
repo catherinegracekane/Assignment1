@@ -58,9 +58,11 @@ class Fuel
         if (dial > 0 && dial < 151)
         {
           textSize(10);
-          text( ( dial*340) + " MPS:", (width*0.625)-(tw*0.4), (height*0.69)+55);          
+          //text( ( dial*340) + " MPS:", (width*0.625)-(tw*0.4), (height*0.69)+55);          
           //text( " we have entered Jupiter ", (width*0.625)-tw, (height*0.69)+110);
-
+          //image: http://everveda.com/wp-content/uploads/2016/01/jupiter.jpg
+          jupiterz = loadImage("jupiter.jpg");
+          image(jupiterz, (width*0.1), height*0.3);
           for (i = 0; i < LINES; i++)
           {
             for (j = 0; j < (LINES*spacing); j+=spacing)
@@ -102,15 +104,18 @@ class Fuel
         if (dial > 250 && dial < 361)
         {
           textSize(10);
-          text( ( dial*340) + " MPS:", (width*0.625)-(tw*0.4), (height*0.69)+55);          
+          //text( ( dial*340) + " MPS:", (width*0.625)-(tw*0.4), (height*0.69)+55);          
           //text( "Current speed " + ( dial*340) + " MPS:", (width*0.625)-tw, (height*0.69)+95);
           //text( " we have entered Saturn ", (width*0.625)-tw, (height*0.69)+110);
-
-          /* pushMatrix();
-           translate((width*0.2), (height*0.25));
-           fill(188,191,58);
-           sphere(35);
-           popMatrix();*/
+          saturnz = loadImage("saturn.jpg");
+          image(saturnz, (width*0.1), height*0.3);
+          
+          /*pushMatrix();
+          translate((width*0.1), (height*0.3));
+          fill(188,191,58);
+          sphere(35);
+          popMatrix();*/
+          
           for (i = 0; i < LINES; i++)
           {
             for (j = 0; j < (LINES*spacing); j+=spacing)
