@@ -77,15 +77,18 @@ class Dial {
     popMatrix();
 
     sec = second();
+    dial = 360 / 30 * sec;
     strokeWeight(3);
     stroke(131, 175, 154);
-
+    
     //need to move this to the small dial
     noFill();
     pushMatrix();
     translate(250, -100);
     arc(position.x, position.y, arcWidth, arcHeight, 0, TWO_PI); 
-    line(position.x, position.y, position.x, position.y+50);
+    //line(position.x, position.y, position.x+dial, (position.y+50)+dial);
     popMatrix();
+    
+
   }//end small dial
 }//end of dial class
