@@ -38,7 +38,7 @@ class Fuel
 
     //dial
     sec = second();
-    dial = 360 / 60 * sec;  
+    dial = 360 / 30 * sec;  
     strokeWeight(0.5);
     stroke(21, 232, 79);
     if (mousePressed)
@@ -51,11 +51,11 @@ class Fuel
         line(0, 0, 0, -120);
         popMatrix();
 
-        fill(255);
+        fill(255); //<>//
         text("LOCATION " + dial+ " " + " AREA CLEAR", (width*0.625)+135, (height*0.69)+80);
 
 
-        if (dial > 0 && dial < 151)
+        if (dial > 0 && dial < 151 || dial > 361 && dial < 450)
         {
           textSize(10);
           //text( ( dial*340) + " MPS:", (width*0.625)-(tw*0.4), (height*0.69)+55);          
@@ -74,10 +74,10 @@ class Fuel
             }
           }
         }
-        if (dial > 150 && dial < 251)
+        if (dial > 150 && dial < 251 || dial > 450 && dial < 600)
         {
           textSize(10);
-          text( ( dial*340) + " MPS:", (width*0.625)-(tw*0.4), (height*0.69)+55);
+          //text( ( dial*340) + " MPS:", (width*0.625)-(tw*0.4), (height*0.69)+55);
           //text( " we have entered Mars ", (width*0.625)-tw, (height*0.69)+110);
           //https://timedotcom.files.wordpress.com/2014/10/mars.jpg?quality=85&w=1100
           marz = loadImage("mars.jpg");
@@ -101,7 +101,7 @@ class Fuel
             }
           }
         }
-        if (dial > 250 && dial < 361)
+        if (dial > 250 && dial < 361 || dial > 600 && dial < 720)
         {
           textSize(10);
           //text( ( dial*340) + " MPS:", (width*0.625)-(tw*0.4), (height*0.69)+55);          

@@ -49,6 +49,7 @@ void draw() {
   case 0:
     //front screen
     main.display();
+    main.alarms();
     break;
 
   case 1:

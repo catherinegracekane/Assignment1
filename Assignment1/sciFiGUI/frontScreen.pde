@@ -24,10 +24,29 @@ class Screen {
     text(a, position.x, position.y);
     textSize(25);
     text(b, position.x, position.y+75);
+    
 
     if ( key == RETURN || key == ENTER)
     {
       gameState = gameState + 1;
+    }
+  }
+  
+    void alarms() {
+
+    if (frameCount % 25 ==0) {
+      fill(0, frameCount * 80 % 255, 0); //flashing green alarm
+      ellipse(position.x-80, position.y-60, 30, 30);
+    }
+
+    if (frameCount % 40 ==0) {
+      fill(255, frameCount * 80 % 255, 0); //flashing red-orange alarm
+      ellipse(position.x, position.y-60, 30, 30);
+    }
+
+    if (frameCount % 30 == 0) {
+      fill(frameCount * 80 % 255, 0, 0); //flashing red alarm
+      ellipse(position.x+80, position.y-60, 30, 30);
     }
   }
 }
