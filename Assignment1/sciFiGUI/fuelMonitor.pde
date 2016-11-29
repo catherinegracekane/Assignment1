@@ -240,7 +240,8 @@ class Fuel
         popMatrix();
 
         fill(0, 255, 0);
-        text((speed) + " MPS", (width*0.625)-(tw*1.1), (height*0.69)+80);
+        textSize(22);
+        text((speed) + " MPS", (width*0.625)-(tw*1.01), (height*0.69)+95);
         speed+=543;
 
         accelerate.rewind(); //this sounds clunky, but it's as it's the accelator, clutch
