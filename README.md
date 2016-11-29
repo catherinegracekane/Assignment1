@@ -4,7 +4,7 @@ Read Me - there is a more detailed PDF with screen shots available in the docume
 
 OOP Assignment - Sci-fi Interface
 
-[![Video (https://img.youtube.com/vi/qPRyGuOU-F4/0.jpg)](https://www.youtube.com/watch?v=qPRyGuOU-F4)
+[![Video](https://img.youtube.com/vi/qPRyGuOU-F4/0.jpg)](https://www.youtube.com/watch?v=qPRyGuOU-F4)
 
 My assignment is a sci-fi interface created using a number of arcs, grids, rectangles and P-Shapes.
 
