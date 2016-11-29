@@ -14,7 +14,6 @@ class Screen {
     
     if (key == ENTER || key == RETURN)
     {
-      shipSound.rewind();
       shipSound.play();
     }
     

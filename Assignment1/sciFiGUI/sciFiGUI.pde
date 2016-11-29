@@ -13,7 +13,7 @@ int gameState = 0; //used to control what's on screen
 
 
 //used sounds: http://www.audiomicro.com/free-sound-effects/
-AudioPlayer shipSound, accelerate;
+AudioPlayer shipSound, accelerate, sonar;
 Minim minim;
 
 void setup() {
@@ -25,20 +25,21 @@ void setup() {
   front = loadFont("PTMono-Regular-48.vlw");
   font = loadFont("Menlo-Regular-48.vlw");
   textFont(font, 10);
-  
+
   //sound
   minim = new Minim(this);
   shipSound = minim.loadFile("Mother ship 1.wav");
   accelerate = minim.loadFile("accelerate.wav");
+  sonar = minim.loadFile("sonarping.wav");
 
   dial = new Dial(); 
   arcs = new Arcs();
   fuel = new Fuel();
   space = new Space();
   main = new Screen();
-  mars = new Planet(255,0,0);
-  jupiter = new Planet(50,255,0);
-  saturn = new Planet(0,0,255);
+  mars = new Planet(255, 0, 0);
+  jupiter = new Planet(50, 255, 0);
+  saturn = new Planet(0, 0, 255);
 }
 
 void draw() {
@@ -62,7 +63,7 @@ void draw() {
     mars.render();
     jupiter.render();
     saturn.render();
-
+    sound();
     break;
 
   default:
@@ -75,4 +76,15 @@ void backGround() {
   //image link: https://i.ytimg.com/vi/Kg4CRIDXkGg/maxresdefault.jpg
   img = loadImage("spacebackground.jpg");
   background (img);
+}
+
+void sound() {
+
+  if (gameState == 1)
+  {
+    if (key == CODED && keyCode == DOWN)
+    {
+      sonar.loop();
+    }
+  }
 }

@@ -53,8 +53,7 @@ class Fuel
 
         fill(255); //<>//
         text("LOCATION " + dial+ " " + " AREA CLEAR", (width*0.625)+135, (height*0.69)+80);
-
-
+        
         if (dial > 0 && dial < 151 || dial > 361 && dial < 450)
         {
           textSize(10);
@@ -244,8 +243,8 @@ class Fuel
         text((speed) + " MPS", (width*0.625)-(tw*1.1), (height*0.69)+80);
         speed+=543;
         
-        accelerate.rewind();
-        accelerate.play();
+        accelerate.rewind(); //this sounds clunky, but it's as it's the accelator, clutch
+        accelerate.play(); //revving the engine and then pressing down key has the smooth sound
       }
     }
 
