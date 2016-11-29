@@ -12,8 +12,8 @@ PImage img;
 int gameState = 0; //used to control what's on screen
 
 
-//used sound: http://www.audiomicro.com/free-sound-effects/mother-ship
-AudioPlayer shipSound;
+//used sounds: http://www.audiomicro.com/free-sound-effects/
+AudioPlayer shipSound, accelerate;
 Minim minim;
 
 void setup() {
@@ -29,6 +29,7 @@ void setup() {
   //sound
   minim = new Minim(this);
   shipSound = minim.loadFile("Mother ship 1.wav");
+  accelerate = minim.loadFile("accelerate.wav");
 
   dial = new Dial(); 
   arcs = new Arcs();

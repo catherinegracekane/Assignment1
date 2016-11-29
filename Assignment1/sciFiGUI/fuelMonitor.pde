@@ -181,6 +181,12 @@ class Fuel
 
   void speed() {
 
+    fill(87, 133, 142);
+    rect(position.x+((position.x/3)*2)-50, position.y-10, height/5, height/4);
+    fill(255);
+    textSize(10);
+    text("POWER", position.x+((position.x/3)*2)-30, position.y+5);
+    
     pushMatrix();
     translate((position.x/3)*2, 0);
     upArrow = createShape();
@@ -237,6 +243,9 @@ class Fuel
         fill(0, 255, 0);
         text((speed) + " MPS", (width*0.625)-(tw*1.1), (height*0.69)+80);
         speed+=543;
+        
+        accelerate.rewind();
+        accelerate.play();
       }
     }
 

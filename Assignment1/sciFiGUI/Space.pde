@@ -16,6 +16,7 @@ class Space
       //stroke(200, 203, 156);
       point(x(b), y(b));
       point(x(-b), y(-b));
+      point(x(b), y(b));
     }
     b-=random(0.2, 0.5);
   }

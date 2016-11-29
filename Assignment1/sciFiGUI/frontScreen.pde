@@ -12,13 +12,13 @@ class Screen {
 
   void display() {
 
-    if (mousePressed)
+    if (key == ENTER || key == RETURN)
     {
       shipSound.rewind();
       shipSound.play();
     }
 
-    fill(255);
+    fill(203, 108,29);
     textAlign(CENTER); 
     textFont(front, 50);
     text(a, position.x, position.y);
