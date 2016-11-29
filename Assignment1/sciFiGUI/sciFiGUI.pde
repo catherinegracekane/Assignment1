@@ -13,6 +13,7 @@ int gameState = 0; //used to control what's on screen
 
 
 //used sounds: http://www.audiomicro.com/free-sound-effects/
+//sonar: https://www.freesound.org/people/digifishmusic/sounds/42796/
 AudioPlayer shipSound, accelerate, sonar;
 Minim minim;
 

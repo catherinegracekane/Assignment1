@@ -1,4 +1,4 @@
-static final int TRIANGLE = 5;
+static final int TRIANGLE = 5; //<>//
 static final int LINES = 4;
 
 class Fuel 
@@ -51,9 +51,9 @@ class Fuel
         line(0, 0, 0, -120);
         popMatrix();
 
-        fill(255); //<>//
+        fill(255);
         text("LOCATION " + dial+ " " + " AREA CLEAR", (width*0.625)+135, (height*0.69)+80);
-        
+
         if (dial > 0 && dial < 151 || dial > 361 && dial < 450)
         {
           textSize(10);
@@ -108,13 +108,13 @@ class Fuel
           //text( " we have entered Saturn ", (width*0.625)-tw, (height*0.69)+110);
           saturnz = loadImage("saturn.jpg");
           image(saturnz, (width*0.1), height*0.3);
-          
+
           /*pushMatrix();
-          translate((width*0.1), (height*0.3));
-          fill(188,191,58);
-          sphere(35);
-          popMatrix();*/
-          
+           translate((width*0.1), (height*0.3));
+           fill(188,191,58);
+           sphere(35);
+           popMatrix();*/
+
           for (i = 0; i < LINES; i++)
           {
             for (j = 0; j < (LINES*spacing); j+=spacing)
@@ -185,7 +185,7 @@ class Fuel
     fill(255);
     textSize(10);
     text("POWER", position.x+((position.x/3)*2)-30, position.y+5);
-    
+
     pushMatrix();
     translate((position.x/3)*2, 0);
     upArrow = createShape();
@@ -242,7 +242,7 @@ class Fuel
         fill(0, 255, 0);
         text((speed) + " MPS", (width*0.625)-(tw*1.1), (height*0.69)+80);
         speed+=543;
-        
+
         accelerate.rewind(); //this sounds clunky, but it's as it's the accelator, clutch
         accelerate.play(); //revving the engine and then pressing down key has the smooth sound
       }
@@ -267,7 +267,6 @@ class Fuel
         downArrow.endShape(CLOSE);
         shape(downArrow);
         popMatrix();
-
       }
     }
   }

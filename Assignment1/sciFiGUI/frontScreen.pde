@@ -2,12 +2,16 @@ class Screen {
 
   PVector position;
   String a, b;  
+  float alarmH; 
+  int alarmS;
 
   //constructor
   Screen() {   
     position = new PVector(width/2, height/2);
     a = "MOONAGE ENTERPRISES";
     b = "PRESS ENTER TO ACCESS";
+    alarmH = 1.9; 
+    alarmS = 30;
   }
 
   void display() {
@@ -25,11 +29,10 @@ class Screen {
     if ( key == RETURN || key == ENTER)
     {
       gameState = gameState + 1;
+      fill(255);
     }
   }
 
-  float alarmH = 1.9; //alarm height
-  int alarmS = 30;//alarm size
   void alarms() {
 
     for (int i = 0; i < width; i+=alarmS*3.3)
