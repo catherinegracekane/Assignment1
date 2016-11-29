@@ -59,7 +59,7 @@ class Dial {
     fill(119, 204, 211);
     ellipse(position.x, position.y, 110, 100);
     fill(87, 133, 142);
-    arc(position.x, position.y, 109, 110, (3*PI)/4, (5*PI)/4);
+    arc(position.x, position.y, 109, 110, (3*PI)/4, (5*PI)/4); 
     //white tear drops on small dial
     fill(255);
     arc(position.x-30, position.y, 50, 10, (3*PI)/4, (5*PI)/4); //tear drop left
@@ -81,12 +81,19 @@ class Dial {
     strokeWeight(3);
     stroke(131, 175, 154);
     
-    //need to move this to the small dial
+    float rad = arcWidth/2;
+    float angle = 0;
     noFill();
     pushMatrix();
     translate(250, -100);
     arc(position.x, position.y, arcWidth, arcHeight, 0, TWO_PI); 
-    //line(position.x, position.y, position.x+dial, (position.y+50)+dial);
+    for(int i = 0; i<30; i++)
+    {
+      fill(0);
+    line(position.x, position.y, (position.x+rad)+angle, (position.y+rad)+angle);
+     angle +=radians(10);
+
+    }
     popMatrix();
     
 
